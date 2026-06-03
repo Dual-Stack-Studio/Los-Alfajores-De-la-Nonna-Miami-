@@ -32,18 +32,25 @@
     <footer class="bg-chocolate text-crema py-12 border-t-4 border-rosa-fuerte w-full">
         <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10">
 
+            <!-- Columna 1: Acerca del negocio + Botón Sobre Mí -->
             <div>
                 <h4 class="text-2xl font-bold text-rosa-pastel mb-4 tracking-wide">
                     El Dulce de la Nona
                 </h4>
 
-                <p class="text-sm leading-relaxed opacity-90 text-crema">
+                <p class="text-sm leading-relaxed opacity-90 text-crema mb-6">
                     Llevamos el auténtico sabor de la repostería artesanal directamente a tu mesa.
                     Registrados en Miami, Florida, preparamos cada docena de alfajores a pedido,
                     manteniendo viva la receta y el amor que nos enseñó la nonna.
                 </p>
+                
+                <!-- NUEVO BOTÓN ACERCA DE MÍ -->
+                <a href="/sobre-mi" class="inline-block border border-rosa-pastel text-rosa-pastel hover:bg-rosa-pastel hover:text-chocolate font-bold py-2 px-6 rounded-full transition-colors text-sm shadow-sm">
+                    Acerca de mí &rarr;
+                </a>
             </div>
 
+            <!-- Columna 2: Contacto -->
             <div>
                 <h4 class="text-xl font-bold text-rosa-pastel mb-4">
                     Contacto
@@ -74,6 +81,7 @@
                 </ul>
             </div>
 
+            <!-- Columna 3: Encargos personalizados -->
             <div>
                 <h4 class="text-xl font-bold text-rosa-pastel mb-4">
                     Encargos personalizados
@@ -86,6 +94,7 @@
             </div>
         </div>
 
+        <!-- Copyright -->
         <div class="mt-12 pt-6 border-t border-chocolate-claro text-center text-sm opacity-60">
             <p>&copy; 2026 El Dulce de la Nona. Todos los derechos reservados.</p>
         </div>
