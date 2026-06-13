@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Nuevo encargo recibido</title>
+    <title>Nuevo pedido recibido</title>
 </head>
 
 <body style="font-family: Arial, sans-serif; background-color: #FFF6F0; color: #4A2A18; padding: 20px;">
@@ -11,7 +11,7 @@
     <div style="max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 16px; padding: 24px; border: 2px solid #F6CCD6;">
 
         <h1 style="color: #4A2A18; text-align: center;">
-            Nuevo encargo recibido
+            Nuevo pedido recibido
         </h1>
 
         <p style="font-size: 16px;">

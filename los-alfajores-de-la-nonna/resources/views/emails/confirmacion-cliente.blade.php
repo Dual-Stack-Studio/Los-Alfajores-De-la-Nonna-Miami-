@@ -3,13 +3,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Confirmación de encargo</title>
+    <title>Confirmación de pedido</title>
 </head>
 
 <body style="font-family: Arial, sans-serif; background-color: #f8f3ee; padding: 20px; color: #3a2a1a;">
     <div style="max-width: 600px; margin: auto; background: #ffffff; padding: 25px; border-radius: 12px;">
 
-        <h2 style="color: #8b4a2f;">¡Gracias por tu encargo!</h2>
+        <h2 style="color: #8b4a2f;">¡Gracias por tu pedido!</h2>
 
         <p>
             Hola {{ $datos['nombre'] ?? 'querida/o cliente' }},
@@ -22,7 +22,7 @@
 
         <hr style="border: none; border-top: 1px solid #e6d8cc; margin: 20px 0;">
 
-        <h3 style="color: #8b4a2f;">Resumen de tu encargo</h3>
+        <h3 style="color: #8b4a2f;">Resumen de tu pedido</h3>
 
         <p><strong>Producto:</strong> Alfajores artesanales</p>
 

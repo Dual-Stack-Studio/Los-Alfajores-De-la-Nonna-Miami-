@@ -20,7 +20,7 @@ class NuevoEncargoMail extends Mailable
     public function build()
     {
         return $this
-            ->subject('Nuevo encargo - El Dulce de la Nona')
+            ->subject('Nuevo pedido - El Dulce de la Nona')
             ->view('emails.nuevo-encargo')
             ->with([
                 'datos' => $this->datos,

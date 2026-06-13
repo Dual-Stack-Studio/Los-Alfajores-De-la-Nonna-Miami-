@@ -20,7 +20,7 @@ class ConfirmacionEncargoClienteMail extends Mailable
     public function build()
     {
         return $this
-            ->subject('Hemos recibido tu encargo - El Dulce de la Nona')
+            ->subject('Hemos recibido tu pedido - El Dulce de la Nona')
             ->view('emails.confirmacion-cliente');
     }
 }

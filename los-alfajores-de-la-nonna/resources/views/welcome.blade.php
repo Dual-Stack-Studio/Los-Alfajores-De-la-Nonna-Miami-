@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'El Dulce de la Nona - Encargos')
+@section('title', 'El Dulce de la Nona - Alfajores Artesanales en Miami')
 
 @section('content')
 
@@ -16,7 +16,7 @@
 
         <div class="hidden md:block">
             <a href="/encargar" class="bg-white hover:bg-crema text-chocolate font-bold py-3 px-8 rounded-full shadow-md transition-colors border-2 border-rosa-fuerte text-lg">
-                Hacer Encargo
+                Hacer pedido
             </a>
         </div>
 
@@ -32,24 +32,24 @@
 
                 <img
                     src="{{ asset('img/IMG-20260602-WA0002~2.jpg') }}"
-                    alt="Alfajores de maicena premium"
+                    alt="Alfajores de maicena artesanales"
                     class="relative z-10 w-full h-auto object-cover rounded-3xl shadow-2xl border-4 border-white">
             </div>
         </div>
 
         <div class="w-full md:w-1/2 flex flex-col justify-center">
             <span class="text-rosa-fuerte font-bold tracking-widest uppercase text-sm mb-2">
-                Edición Artesanal
+                Hechos a pedido en Miami
             </span>
 
             <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                La receta tradicional, <br>llevada a la perfección.
+                Alfajores artesanales, <br>con sabor a tradición.
             </h2>
 
             <p class="text-chocolate-claro text-lg mb-6 leading-relaxed">
-                Nuestros alfajores de maicena se deshacen en la boca. Rellenos con el más puro dulce de leche,
-                borde de coco rallado fresco y un delicado toque de láminas de oro comestible. Cada docena
-                es preparada exclusivamente a pedido para garantizar su frescura absoluta.
+                Nuestros alfajores de maicena están hechos a mano, uno a uno, siguiendo la receta tradicional de la nonna.
+                Una masa suave que se deshace en la boca, dulce de leche generoso y el clásico borde de coco rallado.
+                Cada docena se prepara a pedido para que llegue fresca, delicada y lista para disfrutar.
             </p>
 
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-rosa-pastel inline-block w-fit mb-8">
@@ -68,21 +68,21 @@
 <section class="bg-white py-16 border-t border-rosa-pastel">
     <div class="max-w-6xl mx-auto px-4">
         <h3 class="text-3xl font-bold text-center mb-12">
-            El arte está en los detalles
+            Pequeños detalles, mucho sabor
         </h3>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="overflow-hidden rounded-2xl shadow-md border border-crema">
                 <img
                     src="{{ asset('img/IMG-20260602-WA0001~2.jpg') }}"
-                    alt="Detalle del dulce de leche"
+                    alt="Detalle de alfajor con dulce de leche"
                     class="w-full h-80 object-cover hover:scale-105 transition-transform duration-500">
             </div>
 
             <div class="overflow-hidden rounded-2xl shadow-md border border-crema">
                 <img
                     src="{{ asset('img/IMG-20260602-WA0003~3.jpg') }}"
-                    alt="Alfajores en tabla de madera"
+                    alt="Alfajores artesanales servidos en tabla"
                     class="w-full h-80 object-cover hover:scale-105 transition-transform duration-500">
             </div>
 
@@ -92,12 +92,12 @@
                 </svg>
 
                 <h4 class="text-2xl font-bold mb-2">
-                    Ingredientes Premium
+                    Hechos con dedicación
                 </h4>
 
                 <p class="text-chocolate text-sm">
-                    Usamos materias primas de la más alta calidad, sin conservantes ni saborizantes artificiales.
-                    100% sabor casero.
+                    Cada pedido se prepara de forma artesanal, cuidando la textura, el relleno y ese sabor casero
+                    que hace que siempre quieras volver por uno más.
                 </p>
             </div>
         </div>
