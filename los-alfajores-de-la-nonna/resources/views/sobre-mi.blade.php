@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Sobre Mí - El Dulce de la Nona')
+@section('meta_description', 'Conocé a Sofia, la pastelera detrás de El Dulce de la Nona. Alfajores artesanales hechos en Miami con receta familiar argentina y mucho amor.')
 
 @section('content')
 
@@ -27,7 +28,7 @@
         <div class="md:w-2/5 bg-rosa-pastel flex flex-col items-center justify-center p-10">
             <div class="w-48 h-48 bg-crema rounded-full border-4 border-white shadow-lg flex items-center justify-center mb-6 overflow-hidden">
                 <!-- LLAMADA A TU CARPETA PUBLIC/IMG -->
-                <img src="{{ asset('img/foto Sofia.jpeg') }}" alt="Foto de Sebastian" class="w-full h-full object-cover">
+                <img src="{{ asset('img/foto Sofia.jpeg') }}" alt="Foto de Sofia" class="w-full h-full object-cover">
             </div>
 
             <h1 class="text-3xl font-bold text-chocolate text-center">

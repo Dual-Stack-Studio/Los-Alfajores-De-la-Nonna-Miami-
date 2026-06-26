@@ -1,0 +1,29 @@
+APP_NAME="El Dulce de la Nona"
+APP_ENV=production
+APP_KEY=base64:1re6gyqlkRcnywhCHjaVHYu/tTUm2WLsZokpA78tZLg=
+APP_DEBUG=false
+APP_URL=https://losalfajoresdelanona.com
+
+APP_LOCALE=es
+APP_FALLBACK_LOCALE=es
+
+LOG_CHANNEL=single
+LOG_LEVEL=error
+
+SESSION_DRIVER=file
+SESSION_LIFETIME=120
+
+CACHE_STORE=file
+
+QUEUE_CONNECTION=sync
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp-relay.brevo.com
+MAIL_PORT=587
+MAIL_USERNAME=ad5b80001@smtp-brevo.com
+MAIL_PASSWORD=xsmtpsib-09baa75055d28bfa36a701449d0a7d0f45605515eaa3ba32c07498e38caad030-hGn4cOusl6Nyj4Dn
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=losalfajoresdelanona@hotmail.com
+MAIL_FROM_NAME="Los dulces de la Nonna"
+
+MAIL_TO_ADDRESS=losalfajoresdelanona@hotmail.com

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'Hacer un Encargo - El Dulce de la Nona')
+@section('meta_description', 'Hacé tu pedido de alfajores artesanales en Miami. Completá el formulario y nos ponemos en contacto para confirmar fecha de entrega y detalles.')
 
 @section('content')
 

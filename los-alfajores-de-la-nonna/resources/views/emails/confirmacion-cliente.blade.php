@@ -25,22 +25,16 @@
         <h3 style="color: #8b4a2f;">Resumen de tu pedido</h3>
 
         <p><strong>Producto:</strong> Alfajores artesanales</p>
-
-        @if(!empty($datos['cantidad']))
-        <p><strong>Cantidad:</strong> {{ $datos['cantidad'] }}</p>
-        @endif
-
-        @if(!empty($datos['telefono']))
         <p><strong>Teléfono:</strong> {{ $datos['telefono'] }}</p>
-        @endif
-
-        @if(!empty($datos['direccion']))
         <p><strong>Dirección de entrega:</strong> {{ $datos['direccion'] }}</p>
-        @endif
+        <p><strong>Fecha deseada de entrega:</strong> {{ $datos['fecha_entrega'] }}</p>
 
-        @if(!empty($datos['mensaje']))
-        <p><strong>Mensaje adicional:</strong> {{ $datos['mensaje'] }}</p>
-        @endif
+        <div style="margin-top: 16px;">
+            <p><strong>Detalle del pedido:</strong></p>
+            <div style="background-color: #f8f3ee; padding: 14px; border-radius: 8px; border: 1px solid #e6d8cc; white-space: pre-line;">
+                {{ $datos['pedido'] }}
+            </div>
+        </div>
 
         <hr style="border: none; border-top: 1px solid #e6d8cc; margin: 20px 0;">
 

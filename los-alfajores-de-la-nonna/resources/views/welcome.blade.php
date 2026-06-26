@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'El Dulce de la Nona - Alfajores Artesanales en Miami')
+@section('meta_description', 'Alfajores artesanales hechos a pedido en Miami. Masa de maicena, dulce de leche y coco rallado. Receta familiar argentina, preparados con amor. $15 la docena. ¡Pedí el tuyo!')
 
 @section('content')
 
