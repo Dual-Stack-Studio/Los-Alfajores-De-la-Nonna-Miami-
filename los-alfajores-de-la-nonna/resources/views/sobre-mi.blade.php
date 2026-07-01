@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Sobre Mí - El Dulce de la Nona')
-@section('meta_description', 'Conocé a Sofia, la pastelera detrás de El Dulce de la Nona. Alfajores artesanales hechos en Miami con receta familiar argentina y mucho amor.')
+@section('title', 'Nuestra Historia - El Dulce de la Nona')
+@section('meta_description', 'Conocé la historia detrás de El Dulce de la Nona. Alfajores artesanales hechos en Miami con receta familiar argentina y mucho amor.')
 
 @section('content')
 
@@ -24,19 +24,18 @@
 <main class="flex-grow max-w-4xl mx-auto px-4 py-16 w-full">
     <div class="bg-white rounded-3xl shadow-xl overflow-hidden border-2 border-rosa-pastel flex flex-col md:flex-row">
 
-        <!-- Mitad Izquierda: Foto / Avatar -->
+        <!-- Mitad Izquierda: Logo / Avatar -->
         <div class="md:w-2/5 bg-rosa-pastel flex flex-col items-center justify-center p-10">
             <div class="w-48 h-48 bg-crema rounded-full border-4 border-white shadow-lg flex items-center justify-center mb-6 overflow-hidden">
-                <!-- LLAMADA A TU CARPETA PUBLIC/IMG -->
-                <img src="{{ asset('img/foto Sofia.jpeg') }}" alt="Foto de Sofia" class="w-full h-full object-cover">
+                <img src="{{ asset('img/logo-nonna.png') }}" alt="El Dulce de la Nona" class="w-full h-full object-cover">
             </div>
 
             <h1 class="text-3xl font-bold text-chocolate text-center">
-                Sofia Bonucci
+                El Dulce de la Nona
             </h1>
 
             <p class="text-rosa-fuerte font-bold tracking-widest uppercase text-sm mt-2 text-center">
-                Fundadora & Pastelera
+                Hecho con amor en Miami
             </p>
         </div>
 
