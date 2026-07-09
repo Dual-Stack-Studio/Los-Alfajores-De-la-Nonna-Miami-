@@ -162,6 +162,39 @@
                     @enderror
                 </div>
 
+                <!-- Alérgenos y Cottage Food -->
+                <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-900 space-y-2">
+                    <p class="font-bold flex items-center gap-2">
+                        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                        </svg>
+                        Información de alérgenos
+                    </p>
+                    <p>Nuestros alfajores contienen: <strong>GLUTEN</strong> (maicena), <strong>LÁCTEOS</strong> (dulce de leche), <strong>HUEVO</strong> y <strong>COCO</strong>. Se elaboran en un entorno doméstico donde también pueden procesarse <strong>frutos secos</strong>. Si tienes alguna alergia o intolerancia, contáctanos antes de hacer tu pedido.</p>
+                    <p class="text-xs text-amber-700 border-t border-amber-200 pt-2 mt-2">
+                        Made in a Florida Cottage Food Operation that is not subject to Florida's food safety regulations.
+                    </p>
+                </div>
+
+                <!-- Política de cancelación y pago -->
+                <div class="bg-crema border border-rosa-pastel rounded-xl p-4 text-sm text-chocolate-claro space-y-1">
+                    <p class="font-bold text-chocolate">Pago y cancelaciones</p>
+                    <p>El pago se coordina al momento de confirmar el pedido. Si necesitas cancelar, comunícate con al menos <strong>24 horas de anticipación</strong> a la fecha de entrega.</p>
+                </div>
+
+                <!-- Consentimiento de privacidad -->
+                <div class="flex items-start gap-3">
+                    <input
+                        id="privacidad"
+                        type="checkbox"
+                        name="privacidad"
+                        required
+                        class="mt-1 w-4 h-4 accent-rosa-fuerte shrink-0">
+                    <label for="privacidad" class="text-sm text-chocolate-claro leading-relaxed">
+                        He leído y acepto la <a href="{{ route('privacidad') }}" target="_blank" class="underline text-rosa-fuerte hover:text-chocolate transition-colors">Política de Privacidad</a>. Entiendo que mis datos serán utilizados únicamente para gestionar mi pedido.
+                    </label>
+                </div>
+
                 <button
                     type="submit"
                     class="w-full bg-chocolate hover:bg-[#3a2012] text-white text-lg font-bold py-4 rounded-full shadow-lg transition-transform hover:-translate-y-1">

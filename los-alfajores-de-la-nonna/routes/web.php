@@ -13,3 +13,5 @@ Route::get('/encargar', [EncargoController::class, 'create'])->name('encargos.cr
 Route::post('/encargar', [EncargoController::class, 'store'])->name('encargos.store');
 
 Route::get('/sobre-mi', [PageController::class, 'sobreMi']);
+
+Route::get('/privacidad', [PageController::class, 'privacidad'])->name('privacidad');

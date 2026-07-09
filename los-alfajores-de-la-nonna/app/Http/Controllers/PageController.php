@@ -25,6 +25,12 @@ class PageController extends Controller
         return view('sobre-mi');
     }
 
+    // Mostrar la Política de Privacidad
+    public function privacidad()
+    {
+        return view('privacidad');
+    }
+
     // Procesar los datos del formulario (El método POST)
     public function procesarEncargo(Request $request)
     {

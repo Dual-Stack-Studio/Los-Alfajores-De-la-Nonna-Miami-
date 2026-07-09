@@ -125,6 +125,9 @@
         <div class="mt-12 pt-6 border-t border-chocolate-claro text-center text-sm opacity-60">
             <p>&copy; 2026 El Dulce de la Nona. Todos los derechos reservados.</p>
             <p class="mt-2 opacity-70">Desarrollado por Luciana Bonucci & Sebastián Rodríguez</p>
+            <p class="mt-3">
+                <a href="{{ route('privacidad') }}" class="underline hover:opacity-100 transition-opacity">Política de Privacidad</a>
+            </p>
         </div>
     </footer>
 
