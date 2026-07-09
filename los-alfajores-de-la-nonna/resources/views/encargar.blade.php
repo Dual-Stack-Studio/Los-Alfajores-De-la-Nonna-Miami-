@@ -171,9 +171,6 @@
                         Información de alérgenos
                     </p>
                     <p>Nuestros alfajores contienen: <strong>GLUTEN</strong> (maicena), <strong>LÁCTEOS</strong> (dulce de leche), <strong>HUEVO</strong> y <strong>COCO</strong>. Se elaboran en un entorno doméstico donde también pueden procesarse <strong>frutos secos</strong>. Si tienes alguna alergia o intolerancia, contáctanos antes de hacer tu pedido.</p>
-                    <p class="text-xs text-amber-700 border-t border-amber-200 pt-2 mt-2">
-                        Made in a Florida Cottage Food Operation that is not subject to Florida's food safety regulations.
-                    </p>
                 </div>
 
                 <!-- Política de cancelación y pago -->
