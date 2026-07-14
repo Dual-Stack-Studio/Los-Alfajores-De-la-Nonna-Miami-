@@ -1,58 +1,170 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# El Dulce de la Nonna
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> Live client website for an artisan alfajores bakery in Miami, FL. Custom-order workflow with 48-hour advance validation, dual-email confirmation, and allergen disclosure — built on Laravel 13 with Blade + Tailwind CSS v4.
 
-## About Laravel
+**Real client project · Live at [losalfajoresdelanona.com](https://losalfajoresdelanona.com) · Built under [Dual-Stack Studio](https://github.com/Dual-Stack-Studio)**
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Product
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<div align="center">
 
-## Learning Laravel
+| Alfajores | Presentación | Selección |
+|-----------|-------------|-----------|
+| <img src="docs/screenshots/product1.jpg" width="220"/> | <img src="docs/screenshots/product2.jpg" width="220"/> | <img src="docs/screenshots/product3.jpg" width="220"/> |
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+</div>
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+**Live pages:** [Home](https://losalfajoresdelanona.com) · [Order form](https://losalfajoresdelanona.com/encargar) · [About](https://losalfajoresdelanona.com/sobre-mi)
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+---
 
-## Agentic Development
+## Overview
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+El Dulce de la Nonna is a live client website for an artisan alfajores bakery based in Miami, Florida. The site handles the full custom-order lifecycle: a customer fills out an order form, a 48-hour advance notice rule is enforced server-side, and two emails fire simultaneously — one notifying the owner of a new order, and one sending the customer a confirmation with payment and cancellation terms.
 
-```bash
-composer require laravel/boost --dev
+No database is needed for orders. The owner receives structured order details by email and coordinates payment and delivery directly. This keeps the architecture minimal, maintenance-free, and cost-zero to operate.
 
-php artisan boost:install
+---
+
+## Features
+
+- **Order form** — nombre, email, teléfono, dirección, fecha deseada, detalle del pedido
+- **48-hour advance validation** — Carbon enforces minimum 2-day lead time server-side; requests submitted too close are rejected with Spanish-language error messages
+- **Dual email on submit** — owner receives full order details; customer receives acknowledgment with payment and cancellation terms
+- **Allergen disclosure** — prominently lists GLUTEN, LÁCTEOS, HUEVO, COCO + frutos secos environment
+- **WhatsApp chat button** — one-tap contact for mobile users
+- **Server-rendered** — no JavaScript framework; pure Blade templates with Tailwind CSS v4 and Vite
+- **Responsive** — mobile-first layout, tested on mobile and desktop
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Framework | Laravel 13 |
+| Language | PHP 8.3+ |
+| Templating | Blade (server-rendered) |
+| Styling | Tailwind CSS v4 + Vite |
+| Email | Laravel Mail (Mailables) |
+| Validation | Laravel Form Validation |
+| Date logic | Carbon (48h advance check) |
+| Testing | PHPUnit 12 |
+
+---
+
+## Architecture
+
+```
+Browser
+  │
+  │  GET /           → welcome.blade.php   (hero + products)
+  │  GET /encargar   → EncargoController@create  (order form)
+  │  POST /encargar  → EncargoController@store
+  │                     ├─ Validate: nombre, email, teléfono, dirección, fecha, detalle
+  │                     ├─ Carbon: fecha >= today + 48h  →  reject if too soon
+  │                     ├─ Mail::to(owner)  → NuevoEncargoMail
+  │                     └─ Mail::to(client) → ConfirmacionEncargoClienteMail
+  │  GET /sobre-mi   → PageController@sobreMi   (baker bio + photo)
+  └─ GET /privacidad → PageController@privacidad (privacy policy)
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
+## Order Flow
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. Customer visits `/encargar` and submits the form
+2. Laravel validates all fields server-side with Spanish-language messages
+3. Carbon checks the requested date is at least 48 hours in the future — requests that are too soon are rejected
+4. `NuevoEncargoMail` fires to the owner's configured address (`MAIL_TO_ADDRESS`) with full order details
+5. `ConfirmacionEncargoClienteMail` fires to the customer's email with acknowledgment and terms
+6. Customer is redirected to a thank-you confirmation
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Email Classes
 
-## Security Vulnerabilities
+| Class | Recipient | Subject |
+|-------|-----------|---------|
+| `NuevoEncargoMail` | Owner (`config('mail.to_address')`) | Nuevo pedido - El Dulce de la Nona |
+| `ConfirmacionEncargoClienteMail` | Customer (submitted email) | Hemos recibido tu pedido - El Dulce de la Nona |
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
 
-## License
+## Routes
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+| Method | URI | Handler | Description |
+|--------|-----|---------|-------------|
+| `GET` | `/` | Closure | Homepage (product showcase) |
+| `GET` | `/encargar` | `EncargoController@create` | Order form |
+| `POST` | `/encargar` | `EncargoController@store` | Submit + validate + send emails |
+| `GET` | `/sobre-mi` | `PageController@sobreMi` | About page |
+| `GET` | `/privacidad` | `PageController@privacidad` | Privacy policy |
+
+---
+
+## Setup
+
+**Prerequisites:** PHP 8.3+, Composer, Node.js 20+
+
+```bash
+git clone https://github.com/sebitacasa/los-alfajores-de-la-nonna.git
+cd los-alfajores-de-la-nonna
+composer run setup
+```
+
+The `setup` script handles everything: `composer install` → app key → migrate → `npm install` → `npm run build`.
+
+### Environment
+
+```env
+APP_NAME="El Dulce de la Nonna"
+APP_ENV=production
+APP_URL=https://losalfajoresdelanona.com
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.yourprovider.com
+MAIL_PORT=587
+MAIL_USERNAME=pedidos@losalfajoresdelanona.com
+MAIL_PASSWORD=
+MAIL_FROM_ADDRESS=pedidos@losalfajoresdelanona.com
+MAIL_FROM_NAME="El Dulce de la Nonna"
+MAIL_TO_ADDRESS=pedidos@losalfajoresdelanona.com
+```
+
+For local development, swap `MAIL_MAILER=log` to see emails in `storage/logs/laravel.log`.
+
+---
+
+## Testing
+
+```bash
+composer run test
+# Runs: php artisan config:clear && php artisan test (PHPUnit 12)
+```
+
+---
+
+## Business Details
+
+| | |
+|--|--|
+| Location | Miami, Florida |
+| Product | Artisan alfajores — $15.00 / docena |
+| Contact | pedidos@losalfajoresdelanona.com · +1 (754) 275-0615 |
+| Order window | 48-hour advance notice required |
+| Cancellation | Up to 24 hours before delivery |
+| Payment | Coordinated on confirmation (no online payment processing) |
+| Allergens | GLUTEN · LÁCTEOS · HUEVO · COCO · frutos secos environment |
+
+---
+
+## Project
+
+Real client project built under **[Dual-Stack Studio](https://github.com/Dual-Stack-Studio)** using an adapted Scrum methodology.
+
+Live site: **[losalfajoresdelanona.com](https://losalfajoresdelanona.com)**
+
+© 2025 Dual-Stack Studio — all rights reserved
