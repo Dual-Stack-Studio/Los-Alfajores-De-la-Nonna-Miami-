@@ -28,6 +28,8 @@
 
 El Dulce de la Nonna is a live client website for an artisan alfajores bakery based in Miami, Florida. The site handles the full custom-order lifecycle: a customer fills out an order form, a 48-hour advance notice rule is enforced server-side, and two emails fire simultaneously — one notifying the owner of a new order, and one sending the customer a confirmation with payment and cancellation terms.
 
+The site is built around a specific emotional hook: **Argentine expats in Miami** who grew up eating alfajores and miss the taste of the ones their grandmothers used to make. That nostalgia — for home, for family, for a flavor that takes you back — is baked into the copy, the tone, and the product itself. Every order is handmade to order, the same way a nonna would have made them.
+
 No database is needed for orders. The owner receives structured order details by email and coordinates payment and delivery directly. This keeps the architecture minimal, maintenance-free, and cost-zero to operate.
 
 ---
