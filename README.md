@@ -43,6 +43,19 @@ No database is needed for orders. The owner receives structured order details by
 - **WhatsApp chat button** — one-tap contact for mobile users
 - **Server-rendered** — no JavaScript framework; pure Blade templates with Tailwind CSS v4 and Vite
 - **Responsive** — mobile-first layout, tested on mobile and desktop
+- **Privacy policy page** — dedicated `/privacidad` route with full data-use disclosure
+- **Explicit consent on order form** — checkbox requiring acceptance of the Privacy Policy before submission; data-use scope is stated inline ("used solely to process your order")
+
+---
+
+## Legal & Compliance
+
+The site is built with consumer protection requirements applicable to small businesses operating in Florida:
+
+- **Florida Digital Bill of Rights (FDBR)** — personal data collected through the order form (name, email, phone, address) is used exclusively to fulfill orders; no data is sold or shared with third parties
+- **Allergen disclosure** — Florida food safety regulations require clear allergen labeling for home-based food businesses; the order form includes a prominent allergen notice covering GLUTEN, LÁCTEOS, HUEVO, COCO, and a frutos secos cross-contact warning
+- **Cancellation & payment policy** — cancellation window (24h) and payment terms are disclosed on the order form before submission, in compliance with Florida's Deceptive and Unfair Trade Practices Act (FDUTPA)
+- **Privacy Policy page** — available at `/privacidad`; outlines what data is collected, how it is used, and the customer's rights
 
 ---
 
