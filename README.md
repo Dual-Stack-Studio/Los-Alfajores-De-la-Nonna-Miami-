@@ -6,17 +6,21 @@
 
 ---
 
-## Product
+## Screenshots
 
 <div align="center">
 
-| Alfajores | Presentación | Selección |
-|-----------|-------------|-----------|
-| <img src="los-alfajores-de-la-nonna/docs/screenshots/product1.jpg" width="220"/> | <img src="los-alfajores-de-la-nonna/docs/screenshots/product2.jpg" width="220"/> | <img src="los-alfajores-de-la-nonna/docs/screenshots/product3.jpg" width="220"/> |
+| Home | Gallery | Order Form |
+|------|---------|------------|
+| <img src="los-alfajores-de-la-nonna/docs/screenshots/home.png" width="280"/> | <img src="los-alfajores-de-la-nonna/docs/screenshots/gallery.png" width="280"/> | <img src="los-alfajores-de-la-nonna/docs/screenshots/order-form.png" width="280"/> |
+
+| About | Allergens + Payment Terms |
+|-------|--------------------------|
+| <img src="los-alfajores-de-la-nonna/docs/screenshots/sobre-mi.png" width="280"/> | <img src="los-alfajores-de-la-nonna/docs/screenshots/allergens.png" width="280"/> |
 
 </div>
 
-**Live pages:** [Home](https://losalfajoresdelanona.com) · [Order form](https://losalfajoresdelanona.com/encargar) · [About](https://losalfajoresdelanona.com/sobre-mi)
+**Live:** [losalfajoresdelanona.com](https://losalfajoresdelanona.com) · [Order form](https://losalfajoresdelanona.com/encargar) · [About](https://losalfajoresdelanona.com/sobre-mi)
 
 ---
 
@@ -33,7 +37,7 @@ No database is needed for orders. The owner receives structured order details by
 - **Order form** — nombre, email, teléfono, dirección, fecha deseada, detalle del pedido
 - **48-hour advance validation** — Carbon enforces minimum 2-day lead time server-side; requests submitted too close are rejected with Spanish-language error messages
 - **Dual email on submit** — owner receives full order details; customer receives acknowledgment with payment and cancellation terms
-- **Allergen disclosure** — prominently lists GLUTEN, LÁCTEOS, HUEVO, COCO + frutos secos environment
+- **Allergen disclosure** — prominently lists GLUTEN, LACTEOS, HUEVO, COCO + frutos secos environment
 - **WhatsApp chat button** — one-tap contact for mobile users
 - **Server-rendered** — no JavaScript framework; pure Blade templates with Tailwind CSS v4 and Vite
 - **Responsive** — mobile-first layout, tested on mobile and desktop
@@ -97,7 +101,7 @@ Browser
 
 | Method | URI | Handler | Description |
 |--------|-----|---------|-------------|
-| GET | / | Closure | Homepage |
+| GET | / | Closure | Homepage (product showcase) |
 | GET | /encargar | EncargoController@create | Order form |
 | POST | /encargar | EncargoController@store | Submit + validate + send emails |
 | GET | /sobre-mi | PageController@sobreMi | About page |
@@ -107,13 +111,32 @@ Browser
 
 ## Setup
 
-Prerequisites: PHP 8.3+, Composer, Node.js 20+
+**Prerequisites:** PHP 8.3+, Composer, Node.js 20+
 
 \`\`\`bash
 git clone https://github.com/Dual-Stack-Studio/Los-Alfajores-De-la-Nonna-Miami-.git
 cd Los-Alfajores-De-la-Nonna-Miami-/los-alfajores-de-la-nonna
 composer run setup
 \`\`\`
+
+### Environment
+
+\`\`\`env
+APP_NAME="El Dulce de la Nonna"
+APP_ENV=production
+APP_URL=https://losalfajoresdelanona.com
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.yourprovider.com
+MAIL_PORT=587
+MAIL_USERNAME=pedidos@losalfajoresdelanona.com
+MAIL_PASSWORD=
+MAIL_FROM_ADDRESS=pedidos@losalfajoresdelanona.com
+MAIL_FROM_NAME="El Dulce de la Nonna"
+MAIL_TO_ADDRESS=pedidos@losalfajoresdelanona.com
+\`\`\`
+
+For local development, swap MAIL_MAILER=log to see emails in storage/logs/laravel.log.
 
 ---
 
@@ -131,19 +154,19 @@ composer run test
 | | |
 |--|--|
 | Location | Miami, Florida |
-| Product | Artisan alfajores — $15.00 / docena |
+| Product | Artisan alfajores - $15.00 / docena |
 | Contact | pedidos@losalfajoresdelanona.com · +1 (754) 275-0615 |
 | Order window | 48-hour advance notice required |
 | Cancellation | Up to 24 hours before delivery |
-| Payment | Coordinated on confirmation |
+| Payment | Coordinated on confirmation (no online payment processing) |
 | Allergens | GLUTEN · LACTEOS · HUEVO · COCO · frutos secos environment |
 
 ---
 
 ## Project
 
-Real client project built under **Dual-Stack Studio** using an adapted Scrum methodology.
+Real client project built under **[Dual-Stack Studio](https://github.com/Dual-Stack-Studio)** using an adapted Scrum methodology.
 
-Live site: **https://losalfajoresdelanona.com**
+Live site: **[losalfajoresdelanona.com](https://losalfajoresdelanona.com)**
 
 © 2025 Dual-Stack Studio — all rights reserved
